@@ -20,19 +20,12 @@ A API foi desenvolvida utilizando o `fastapi` (async), junto das seguintes libs:
 
 ## Execução da API
 
-Para executar o projeto, utilizei a [pyenv](https://github.com/pyenv/pyenv), com a versão 3.11.4 do `python` para o ambiente virtual.
-
-Caso opte por usar pyenv, após instalar, execute:
-
 ```bash
-pyenv virtualenv 3.11.4 workoutapi
-pyenv activate workoutapi
-pip install -r requirements.txt
+uv sync
 ```
-Para subir o banco de dados, caso não tenha o [docker-compose](https://docs.docker.com/compose/install/linux/) instalado, faça a instalação e logo em seguida, execute:
 
 ```bash
-make run-docker
+uvicorn kernel.main:app --host 0.0.0.0 --port 8001 --reload
 ```
 Para criar uma migration nova, execute:
 
